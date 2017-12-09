@@ -40,10 +40,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
-            this.dashboard1 = new pos_restaurant.dashboard();
             this.label2 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.sell1 = new pos_restaurant.sell();
+            this.dashboard1 = new pos_restaurant.dashboard();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -193,13 +193,6 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // dashboard1
-            // 
-            this.dashboard1.Location = new System.Drawing.Point(220, 90);
-            this.dashboard1.Name = "dashboard1";
-            this.dashboard1.Size = new System.Drawing.Size(1043, 581);
-            this.dashboard1.TabIndex = 4;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -219,6 +212,13 @@
             this.sell1.Name = "sell1";
             this.sell1.Size = new System.Drawing.Size(1043, 581);
             this.sell1.TabIndex = 6;
+            // 
+            // dashboard1
+            // 
+            this.dashboard1.Location = new System.Drawing.Point(220, 90);
+            this.dashboard1.Name = "dashboard1";
+            this.dashboard1.Size = new System.Drawing.Size(1043, 581);
+            this.dashboard1.TabIndex = 4;
             // 
             // Form1
             // 
