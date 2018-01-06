@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic.FileIO;
 
 namespace pos_restaurant
 {
@@ -67,7 +68,27 @@ namespace pos_restaurant
 
         private void importCSVFile(string filepath)
         {
-            throw new NotImplementedException();
+            try
+            {
+                TextFieldParser csvreader = new TextFieldParser(filepath);
+
+                csvreader.SetDelimiters(new string[] { "," });
+
+                while (!csvreader.EndOfData)
+                {
+                    string[] fielddata = csvreader.ReadFields();
+
+                    for (int i = 0; i < fielddata.Length; i++)
+                    {
+                        Console.WriteLine(fielddata[i] + "\t");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Import CSV File", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

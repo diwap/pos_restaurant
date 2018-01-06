@@ -42,10 +42,10 @@
             this.button6 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.report1 = new pos_restaurant.report();
+            this.menu1 = new pos_restaurant.menu();
             this.sell1 = new pos_restaurant.sell();
             this.dashboard1 = new pos_restaurant.dashboard();
-            this.menu1 = new pos_restaurant.menu();
-            this.report1 = new pos_restaurant.report();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -210,6 +210,21 @@
             this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // report1
+            // 
+            this.report1.Location = new System.Drawing.Point(220, 90);
+            this.report1.Name = "report1";
+            this.report1.Size = new System.Drawing.Size(1043, 581);
+            this.report1.TabIndex = 8;
+            // 
+            // menu1
+            // 
+            this.menu1.BackColor = System.Drawing.Color.White;
+            this.menu1.Location = new System.Drawing.Point(220, 90);
+            this.menu1.Name = "menu1";
+            this.menu1.Size = new System.Drawing.Size(1043, 581);
+            this.menu1.TabIndex = 7;
+            // 
             // sell1
             // 
             this.sell1.Location = new System.Drawing.Point(220, 90);
@@ -223,21 +238,6 @@
             this.dashboard1.Name = "dashboard1";
             this.dashboard1.Size = new System.Drawing.Size(1043, 581);
             this.dashboard1.TabIndex = 4;
-            // 
-            // menu1
-            // 
-            this.menu1.BackColor = System.Drawing.Color.White;
-            this.menu1.Location = new System.Drawing.Point(220, 90);
-            this.menu1.Name = "menu1";
-            this.menu1.Size = new System.Drawing.Size(1043, 581);
-            this.menu1.TabIndex = 7;
-            // 
-            // report1
-            // 
-            this.report1.Location = new System.Drawing.Point(220, 90);
-            this.report1.Name = "report1";
-            this.report1.Size = new System.Drawing.Size(1043, 581);
-            this.report1.TabIndex = 8;
             // 
             // Form1
             // 
