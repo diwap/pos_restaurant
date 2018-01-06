@@ -16,5 +16,12 @@ namespace pos_restaurant
         {
             InitializeComponent();
         }
+
+        private void discard_Click(object sender, EventArgs e)
+        {
+            name.Clear();
+            category.Clear();
+            price.Clear();
+        }
     }
 }
