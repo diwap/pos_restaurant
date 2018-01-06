@@ -63,6 +63,7 @@
             this.save.TabIndex = 1;
             this.save.Text = "SAVE";
             this.save.UseVisualStyleBackColor = false;
+            this.save.Click += new System.EventHandler(this.save_Click);
             // 
             // discard
             // 

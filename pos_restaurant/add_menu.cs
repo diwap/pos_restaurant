@@ -23,5 +23,17 @@ namespace pos_restaurant
             category.Text = "Category";
             price.Text = "Price";
         }
+
+        private void save_Click(object sender, EventArgs e)
+        {
+            if (name.Text != "Name" | category.Text != "Category" | price.Text != "Price")
+            {
+                MessageBox.Show(string.Format("Your food details:\n\nName: {0} \nCategory: {1} \nPrice: {2}", name.Text, category.Text, price.Text));
+            }
+            else
+            {
+                MessageBox.Show("Please change field value to insert your new menu");
+            }
+        }
     }
 }
