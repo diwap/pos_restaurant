@@ -45,6 +45,7 @@
             this.sell1 = new pos_restaurant.sell();
             this.dashboard1 = new pos_restaurant.dashboard();
             this.menu1 = new pos_restaurant.menu();
+            this.report1 = new pos_restaurant.report();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -102,6 +103,7 @@
             this.button5.Text = "      REPORT";
             this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -230,11 +232,19 @@
             this.menu1.Size = new System.Drawing.Size(1043, 581);
             this.menu1.TabIndex = 7;
             // 
+            // report1
+            // 
+            this.report1.Location = new System.Drawing.Point(220, 90);
+            this.report1.Name = "report1";
+            this.report1.Size = new System.Drawing.Size(1043, 581);
+            this.report1.TabIndex = 8;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1263, 671);
+            this.Controls.Add(this.report1);
             this.Controls.Add(this.menu1);
             this.Controls.Add(this.sell1);
             this.Controls.Add(this.label2);
@@ -272,6 +282,7 @@
         private System.Windows.Forms.Timer timer1;
         private sell sell1;
         private menu menu1;
+        private report report1;
     }
 }
 

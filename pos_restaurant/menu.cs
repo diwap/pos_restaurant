@@ -21,6 +21,7 @@ namespace pos_restaurant
         private void button2_Click(object sender, EventArgs e)
         {
             add_menu1.Visible = true;
+            add_menu1.BringToFront();
         }
     }
 }
