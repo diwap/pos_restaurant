@@ -15,13 +15,59 @@ namespace pos_restaurant
         public menu()
         {
             InitializeComponent();
-            add_menu1.Visible = false;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void save_Click(object sender, EventArgs e)
         {
-            add_menu1.Visible = true;
-            add_menu1.BringToFront();
+            if (name.Text != "Name" | category.Text != "Category" | price.Text != "Price")
+            {
+                int n = dataGridView1.Rows.Add();
+
+                dataGridView1.Rows[n].Cells[0].Value = name.Text;
+                dataGridView1.Rows[n].Cells[1].Value = category.Text;
+                dataGridView1.Rows[n].Cells[2].Value = price.Text;
+
+                //MessageBox.Show(string.Format("Your food details:\n\nName: {0} \nCategory: {1} \nPrice: {2}", name.Text, category.Text, price.Text));
+            }
+            else
+            {
+                MessageBox.Show("Please change field value to insert your new menu");
+            }
+        }
+
+        private void discard_Click(object sender, EventArgs e)
+        {
+            name.Text = "Name";
+            category.Text = "Category";
+            price.Text = "Price";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog dialog = new OpenFileDialog();
+                dialog.Filter = "CSV|*.csv";
+                dialog.ValidateNames = true;
+                dialog.Multiselect = false;
+
+                DialogResult result = dialog.ShowDialog();
+                if(result == DialogResult.OK)
+                {
+                    csv_path.Text = dialog.FileName;
+                    string val = csv_path.Text;
+                    importCSVFile(val);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Your file successfully loaded", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void importCSVFile(string filepath)
+        {
+            throw new NotImplementedException();
         }
     }
 }
