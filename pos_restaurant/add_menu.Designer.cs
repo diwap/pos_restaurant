@@ -36,25 +36,28 @@
             // 
             // name
             // 
+            this.name.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.name.Location = new System.Drawing.Point(41, 16);
             this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(323, 20);
+            this.name.Size = new System.Drawing.Size(323, 13);
             this.name.TabIndex = 0;
             this.name.Text = "Name";
             // 
             // category
             // 
+            this.category.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.category.Location = new System.Drawing.Point(41, 81);
             this.category.Name = "category";
-            this.category.Size = new System.Drawing.Size(323, 20);
+            this.category.Size = new System.Drawing.Size(323, 13);
             this.category.TabIndex = 0;
             this.category.Text = "Category";
             // 
             // price
             // 
+            this.price.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.price.Location = new System.Drawing.Point(41, 145);
             this.price.Name = "price";
-            this.price.Size = new System.Drawing.Size(323, 20);
+            this.price.Size = new System.Drawing.Size(323, 13);
             this.price.TabIndex = 0;
             this.price.Text = "Price";
             // 

@@ -50,5 +50,12 @@ namespace pos_restaurant
             ActivePanel.Top = button3.Top;
             sell1.BringToFront();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ActivePanel.Height = button4.Height;
+            ActivePanel.Top = button4.Top;
+            menu1.BringToFront();
+        }
     }
 }

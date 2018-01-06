@@ -15,6 +15,12 @@ namespace pos_restaurant
         public menu()
         {
             InitializeComponent();
+            add_menu1.Visible = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            add_menu1.Visible = true;
         }
     }
 }

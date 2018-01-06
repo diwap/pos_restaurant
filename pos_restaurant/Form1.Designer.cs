@@ -44,6 +44,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.sell1 = new pos_restaurant.sell();
             this.dashboard1 = new pos_restaurant.dashboard();
+            this.menu1 = new pos_restaurant.menu();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -118,6 +119,7 @@
             this.button4.Text = "      MENU";
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -220,11 +222,20 @@
             this.dashboard1.Size = new System.Drawing.Size(1043, 581);
             this.dashboard1.TabIndex = 4;
             // 
+            // menu1
+            // 
+            this.menu1.BackColor = System.Drawing.Color.White;
+            this.menu1.Location = new System.Drawing.Point(220, 90);
+            this.menu1.Name = "menu1";
+            this.menu1.Size = new System.Drawing.Size(1043, 581);
+            this.menu1.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1263, 671);
+            this.Controls.Add(this.menu1);
             this.Controls.Add(this.sell1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dashboard1);
@@ -260,6 +271,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer timer1;
         private sell sell1;
+        private menu menu1;
     }
 }
 

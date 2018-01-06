@@ -31,12 +31,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.add_menu1 = new pos_restaurant.add_menu();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -70,12 +71,21 @@
             this.button2.TabIndex = 0;
             this.button2.Text = "+";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // add_menu1
+            // 
+            this.add_menu1.Location = new System.Drawing.Point(-3, 0);
+            this.add_menu1.Name = "add_menu1";
+            this.add_menu1.Size = new System.Drawing.Size(1043, 581);
+            this.add_menu1.TabIndex = 1;
             // 
             // menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.add_menu1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel1);
             this.Name = "menu";
@@ -90,5 +100,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private add_menu add_menu1;
     }
 }
