@@ -57,7 +57,7 @@
             this.save.FlatAppearance.BorderSize = 0;
             this.save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.save.ForeColor = System.Drawing.Color.White;
-            this.save.Location = new System.Drawing.Point(41, 334);
+            this.save.Location = new System.Drawing.Point(37, 333);
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(165, 38);
             this.save.TabIndex = 1;
@@ -70,7 +70,7 @@
             this.discard.FlatAppearance.BorderSize = 0;
             this.discard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.discard.ForeColor = System.Drawing.Color.White;
-            this.discard.Location = new System.Drawing.Point(212, 334);
+            this.discard.Location = new System.Drawing.Point(208, 333);
             this.discard.Name = "discard";
             this.discard.Size = new System.Drawing.Size(165, 38);
             this.discard.TabIndex = 1;
