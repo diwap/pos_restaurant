@@ -19,9 +19,9 @@ namespace pos_restaurant
 
         private void discard_Click(object sender, EventArgs e)
         {
-            name.Clear();
-            category.Clear();
-            price.Clear();
+            name.Text = "Name";
+            category.Text = "Category";
+            price.Text = "Price";
         }
     }
 }

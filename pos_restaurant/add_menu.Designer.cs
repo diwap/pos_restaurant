@@ -74,7 +74,7 @@
             this.discard.Name = "discard";
             this.discard.Size = new System.Drawing.Size(165, 38);
             this.discard.TabIndex = 1;
-            this.discard.Text = "DISCARD";
+            this.discard.Text = "CLEAR";
             this.discard.UseVisualStyleBackColor = false;
             this.discard.Click += new System.EventHandler(this.discard_Click);
             // 
