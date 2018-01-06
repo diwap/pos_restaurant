@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="add_menu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="add_menu.Designer.cs">
+      <DependentUpon>add_menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="dashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     <Compile Include="sell.Designer.cs">
       <DependentUpon>sell.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="add_menu.resx">
+      <DependentUpon>add_menu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="dashboard.resx">
       <DependentUpon>dashboard.cs</DependentUpon>
     </EmbeddedResource>
