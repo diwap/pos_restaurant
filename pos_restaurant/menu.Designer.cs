@@ -31,12 +31,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.csv_path = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.product_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.product_category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.product_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.save = new System.Windows.Forms.Button();
             this.discard = new System.Windows.Forms.Button();
             this.price = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
@@ -44,8 +43,6 @@
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.name = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.save = new System.Windows.Forms.Button();
-            this.csv_path = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -61,6 +58,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1043, 45);
             this.panel1.TabIndex = 0;
+            // 
+            // csv_path
+            // 
+            this.csv_path.BackColor = System.Drawing.Color.White;
+            this.csv_path.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.csv_path.Location = new System.Drawing.Point(175, 13);
+            this.csv_path.Name = "csv_path";
+            this.csv_path.ReadOnly = true;
+            this.csv_path.Size = new System.Drawing.Size(452, 13);
+            this.csv_path.TabIndex = 1;
             // 
             // button1
             // 
@@ -94,31 +101,12 @@
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeight = 40;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.product_name,
-            this.product_category,
-            this.product_price});
             this.dataGridView1.Location = new System.Drawing.Point(279, 45);
             this.dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Size = new System.Drawing.Size(764, 536);
-            this.dataGridView1.TabIndex = 2;
-            // 
-            // product_name
-            // 
-            this.product_name.HeaderText = "Name";
-            this.product_name.Name = "product_name";
-            // 
-            // product_category
-            // 
-            this.product_category.HeaderText = "Category";
-            this.product_category.Name = "product_category";
-            // 
-            // product_price
-            // 
-            this.product_price.HeaderText = "Price";
-            this.product_price.Name = "product_price";
+            this.dataGridView1.TabIndex = 9;
             // 
             // panel2
             // 
@@ -135,6 +123,20 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(273, 536);
             this.panel2.TabIndex = 3;
+            // 
+            // save
+            // 
+            this.save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.save.FlatAppearance.BorderSize = 0;
+            this.save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.save.ForeColor = System.Drawing.Color.White;
+            this.save.Location = new System.Drawing.Point(24, 328);
+            this.save.Name = "save";
+            this.save.Size = new System.Drawing.Size(101, 38);
+            this.save.TabIndex = 7;
+            this.save.Text = "SAVE";
+            this.save.UseVisualStyleBackColor = false;
+            this.save.Click += new System.EventHandler(this.save_Click);
             // 
             // discard
             // 
@@ -158,7 +160,7 @@
             this.price.Location = new System.Drawing.Point(24, 234);
             this.price.Name = "price";
             this.price.Size = new System.Drawing.Size(205, 22);
-            this.price.TabIndex = 2;
+            this.price.TabIndex = 6;
             this.price.Text = "Price";
             // 
             // flowLayoutPanel3
@@ -177,7 +179,7 @@
             this.category.Location = new System.Drawing.Point(24, 133);
             this.category.Name = "category";
             this.category.Size = new System.Drawing.Size(205, 22);
-            this.category.TabIndex = 4;
+            this.category.TabIndex = 5;
             this.category.Text = "Category";
             // 
             // flowLayoutPanel2
@@ -196,7 +198,7 @@
             this.name.Location = new System.Drawing.Point(24, 34);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(205, 22);
-            this.name.TabIndex = 6;
+            this.name.TabIndex = 4;
             this.name.Text = "Name";
             // 
             // flowLayoutPanel1
@@ -206,30 +208,6 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(222, 49);
             this.flowLayoutPanel1.TabIndex = 7;
-            // 
-            // save
-            // 
-            this.save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.save.FlatAppearance.BorderSize = 0;
-            this.save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.save.ForeColor = System.Drawing.Color.White;
-            this.save.Location = new System.Drawing.Point(24, 328);
-            this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(101, 38);
-            this.save.TabIndex = 9;
-            this.save.Text = "SAVE";
-            this.save.UseVisualStyleBackColor = false;
-            this.save.Click += new System.EventHandler(this.save_Click);
-            // 
-            // csv_path
-            // 
-            this.csv_path.BackColor = System.Drawing.Color.White;
-            this.csv_path.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.csv_path.Location = new System.Drawing.Point(175, 13);
-            this.csv_path.Name = "csv_path";
-            this.csv_path.ReadOnly = true;
-            this.csv_path.Size = new System.Drawing.Size(452, 13);
-            this.csv_path.TabIndex = 1;
             // 
             // menu
             // 
@@ -255,9 +233,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn product_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn product_category;
-        private System.Windows.Forms.DataGridViewTextBoxColumn product_price;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button discard;
         private System.Windows.Forms.TextBox price;
