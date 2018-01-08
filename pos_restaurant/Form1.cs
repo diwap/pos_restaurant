@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace pos_restaurant
             InitializeComponent();
             ActivePanel.Height = button1.Height;
             ActivePanel.Top = button1.Top;
-            dashboard1.BringToFront();
+            //dashboard1.BringToFront
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -41,28 +42,83 @@ namespace pos_restaurant
         {
             ActivePanel.Height = button1.Height;
             ActivePanel.Top = button1.Top;
-            dashboard1.BringToFront();
+            //dashboard1.BringToFront();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             ActivePanel.Height = button3.Height;
             ActivePanel.Top = button3.Top;
-            sell1.BringToFront();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            ActivePanel.Height = button4.Height;
-            ActivePanel.Top = button4.Top;
-            menu1.BringToFront();
+            //sell1.BringToFront();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             ActivePanel.Height = button5.Height;
             ActivePanel.Top = button5.Top;
-            report1.BringToFront();
+            //report1.BringToFront();
+        }
+
+        private void save_Click(object sender, EventArgs e)
+        {
+            if (name.Text != "Name" | category.Text != "Category" | price.Text != "Price")
+            {
+                int n = dataGridView1.Rows.Add();
+                int m_price;
+
+                dataGridView1.Rows[n].Cells[0].Value = name.Text;
+                dataGridView1.Rows[n].Cells[1].Value = category.Text;
+                if (int.TryParse(price.Text, out m_price))
+                {
+                    dataGridView1.Rows[n].Cells[2].Value = price.Text;
+                }
+
+                //MessageBox.Show(string.Format("Your food details:\n\nName: {0} \nCategory: {1} \nPrice: {2}", name.Text, category.Text, price.Text));
+            }
+            else
+            {
+                MessageBox.Show("Please change field value to insert your new menu");
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();/**Opens New Dialog Box */
+            dialog.Filter = "Files(*.txt, *.csv)|*.txt;*.csv|All Files (*.*) |*.*"; /**used for .csv format */
+            DialogResult result = dialog.ShowDialog();
+
+            /**If csv file is chosen */
+            if (result == DialogResult.OK)
+            {
+                csv_path.Text = dialog.FileName;
+                StreamReader stream_data = new StreamReader(dialog.FileName);
+                while (!stream_data.EndOfStream)
+                {
+                    /** Spliting the Excel data into Colomns */
+                    var columns = stream_data.ReadLine().Split(',');
+                    Console.WriteLine(columns);
+
+                    /** Adding Columns in datagrid view*/
+                    dataGridView1.Rows.Add(columns);
+                }
+            }
+        }
+
+        private void discard_Click(object sender, EventArgs e)
+        {
+            name.Text = "Name";
+            category.Text = "Category";
+            price.Text = "Price";
+        }
+
+        private void sort_price_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Sort(dataGridView1.Columns[2], ListSortDirection.Ascending);
+        }
+
+        private void sort_name_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Ascending);
         }
     }
 }
