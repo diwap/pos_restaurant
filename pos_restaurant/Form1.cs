@@ -120,5 +120,27 @@ namespace pos_restaurant
         {
             dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Ascending);
         }
+
+        private void payment_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Payment Slip");
+            List<menu_name> CV = new List<menu_name>();
+            foreach (DataGridViewRow item in dataGridView1.Rows)
+            {
+                if (Convert.ToBoolean(item.Cells[3].Value))
+                {
+                    CV.Add(new menu_name
+                    {
+                        name = item.Cells[0].Value.ToString(),
+                        category = item.Cells[1].Value.ToString(),
+                        price = item.Cells[2].Value.ToString()
+                    });
+                }
+            }
+
+            payment_form pmt = new payment_form();
+            pmt.Values = CV;
+            pmt.Show();
+        }
     }
 }

@@ -87,17 +87,25 @@
     <Compile Include="item.Designer.cs">
       <DependentUpon>item.cs</DependentUpon>
     </Compile>
+    <Compile Include="main_menu.cs" />
     <Compile Include="menu.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="menu.Designer.cs">
       <DependentUpon>menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="menu_name.cs" />
     <Compile Include="payment.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="payment.Designer.cs">
       <DependentUpon>payment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="payment_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="payment_form.Designer.cs">
+      <DependentUpon>payment_form.cs</DependentUpon>
     </Compile>
     <Compile Include="print_receipt.cs">
       <SubType>Form</SubType>
@@ -143,6 +151,9 @@
     <EmbeddedResource Include="payment.resx">
       <DependentUpon>payment.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="payment_form.resx">
+      <DependentUpon>payment_form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="print_receipt.resx">
       <DependentUpon>print_receipt.cs</DependentUpon>
     </EmbeddedResource>
@@ -166,6 +177,7 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\menu.datasource" />
+    <None Include="Properties\DataSources\menu_name.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

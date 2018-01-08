@@ -409,6 +409,7 @@
             this.payment.TabIndex = 2;
             this.payment.Text = "PAYMENT";
             this.payment.UseVisualStyleBackColor = false;
+            this.payment.Click += new System.EventHandler(this.payment_Click);
             // 
             // sort_price
             // 

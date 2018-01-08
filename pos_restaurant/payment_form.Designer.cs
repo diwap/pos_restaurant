@@ -1,13 +1,13 @@
 ﻿namespace pos_restaurant
 {
-    partial class payment
+    partial class payment_form
     {
-        /// <summary> 
+        /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
+        /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,32 +20,28 @@
             base.Dispose(disposing);
         }
 
-        #region Component Designer generated code
+        #region Windows Form Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
+        /// <summary>
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.all_total = new System.Windows.Forms.TextBox();
-            this.print = new System.Windows.Forms.Button();
-            this.menunameBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.all_total = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.menunameBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.name,
@@ -53,50 +49,32 @@
             this.price,
             this.quantity,
             this.total});
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1037, 503);
+            this.dataGridView1.Size = new System.Drawing.Size(581, 150);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // all_total
-            // 
-            this.all_total.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.all_total.Location = new System.Drawing.Point(3, 512);
-            this.all_total.Name = "all_total";
-            this.all_total.Size = new System.Drawing.Size(166, 13);
-            this.all_total.TabIndex = 1;
-            // 
-            // print
-            // 
-            this.print.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.print.FlatAppearance.BorderSize = 0;
-            this.print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.print.ForeColor = System.Drawing.Color.White;
-            this.print.Location = new System.Drawing.Point(3, 565);
-            this.print.Name = "print";
-            this.print.Size = new System.Drawing.Size(165, 38);
-            this.print.TabIndex = 2;
-            this.print.Text = "PRINT BILL";
-            this.print.UseVisualStyleBackColor = false;
-            // 
-            // menunameBindingSource
-            // 
-            this.menunameBindingSource.DataSource = typeof(pos_restaurant.menu_name);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // name
             // 
+            this.name.Frozen = true;
             this.name.HeaderText = "Name";
             this.name.Name = "name";
+            this.name.ReadOnly = true;
             // 
             // category
             // 
+            this.category.Frozen = true;
             this.category.HeaderText = "Category";
             this.category.Name = "category";
+            this.category.ReadOnly = true;
             // 
             // price
             // 
+            this.price.Frozen = true;
             this.price.HeaderText = "Price";
             this.price.Name = "price";
+            this.price.ReadOnly = true;
             // 
             // quantity
             // 
@@ -107,18 +85,38 @@
             // 
             this.total.HeaderText = "Total";
             this.total.Name = "total";
+            this.total.ReadOnly = true;
             // 
-            // payment
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 168);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Refresh";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // all_total
+            // 
+            this.all_total.Location = new System.Drawing.Point(493, 171);
+            this.all_total.Name = "all_total";
+            this.all_total.ReadOnly = true;
+            this.all_total.Size = new System.Drawing.Size(100, 20);
+            this.all_total.TabIndex = 2;
+            // 
+            // payment_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.print);
+            this.ClientSize = new System.Drawing.Size(605, 486);
             this.Controls.Add(this.all_total);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "payment";
-            this.Size = new System.Drawing.Size(1043, 606);
+            this.Name = "payment_form";
+            this.Text = "payment_form";
+            this.Load += new System.EventHandler(this.payment_form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.menunameBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,13 +125,12 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox all_total;
-        private System.Windows.Forms.Button print;
-        private System.Windows.Forms.BindingSource menunameBindingSource;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn category;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn total;
+        private System.Windows.Forms.TextBox all_total;
     }
 }
