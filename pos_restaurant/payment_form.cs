@@ -68,14 +68,33 @@ namespace pos_restaurant
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //foreach (DataGridViewRow item in dataGridView1.Rows)
-            //{
-            //    int n = item.Index;
-            //    dataGridView1.Rows[n].Cells[3].Value = "1";
-            //    string value1 = dataGridView1.Rows[n].Cells[2].Value.ToString();
-            //    string value2 = dataGridView1.Rows[n].Cells[3].Value.ToString();
-            //    dataGridView1.Rows[n].Cells[4].Value = (Int32.Parse(value1) * Int32.Parse(value2)).ToString();
-            //}
+
+        }
+
+        private void cash_received_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int int_cash_received = Int32.Parse(cash_received.Text);
+                int int_all_total = Int32.Parse(all_total.Text);
+                if (int_cash_received >= int_all_total)
+                {
+                    cash_return.Text = (int_cash_received - int_all_total).ToString();
+                }
+                else
+                {
+                    cash_return.Text = "Less than total";
+                }
+            }
+            catch (System.FormatException)
+            {
+                MessageBox.Show("Field is empty");
+            }            
+        }
+
+        private void save_Click(object sender, EventArgs e)
+        {
+            save.Text = "SALE SUCCESSFul";
         }
     }
 }

@@ -137,10 +137,17 @@ namespace pos_restaurant
                     });
                 }
             }
+                payment_form pmt = new payment_form();
+                pmt.Values = CV;
+                pmt.Show();
+        }
 
-            payment_form pmt = new payment_form();
-            pmt.Values = CV;
-            pmt.Show();
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.IsCurrentRowDirty)
+            {
+                payment.Visible = true;
+            }
         }
     }
 }
