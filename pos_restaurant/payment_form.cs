@@ -89,12 +89,18 @@ namespace pos_restaurant
             catch (System.FormatException)
             {
                 MessageBox.Show("Field is empty");
-            }            
+            }
         }
 
         private void save_Click(object sender, EventArgs e)
         {
-            save.Text = "SALE SUCCESSFul";
+            save.Text = "ORDER SUCCESSFUL";
+            
+        }
+
+        private void discard_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

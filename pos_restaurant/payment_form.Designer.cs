@@ -42,6 +42,7 @@
             this.cash_return = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.discard = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -117,7 +118,7 @@
             this.save.FlatAppearance.BorderSize = 0;
             this.save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.save.ForeColor = System.Drawing.Color.White;
-            this.save.Location = new System.Drawing.Point(12, 271);
+            this.save.Location = new System.Drawing.Point(12, 267);
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(147, 38);
             this.save.TabIndex = 8;
@@ -169,11 +170,26 @@
             this.label2.TabIndex = 13;
             this.label2.Text = "Cash Return";
             // 
+            // discard
+            // 
+            this.discard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.discard.FlatAppearance.BorderSize = 0;
+            this.discard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.discard.ForeColor = System.Drawing.Color.White;
+            this.discard.Location = new System.Drawing.Point(174, 267);
+            this.discard.Name = "discard";
+            this.discard.Size = new System.Drawing.Size(147, 38);
+            this.discard.TabIndex = 14;
+            this.discard.Text = "DISCARD";
+            this.discard.UseVisualStyleBackColor = false;
+            this.discard.Click += new System.EventHandler(this.discard_Click);
+            // 
             // payment_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(605, 317);
+            this.Controls.Add(this.discard);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cash_return);
@@ -182,8 +198,10 @@
             this.Controls.Add(this.all_total);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "payment_form";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "payment_form";
             this.Load += new System.EventHandler(this.payment_form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -207,5 +225,6 @@
         private System.Windows.Forms.TextBox cash_return;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button discard;
     }
 }

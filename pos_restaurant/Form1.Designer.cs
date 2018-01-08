@@ -32,11 +32,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ActivePanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -44,9 +46,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.csv_path = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.add_menu = new System.Windows.Forms.Panel();
             this.save = new System.Windows.Forms.Button();
             this.discard = new System.Windows.Forms.Button();
             this.price = new System.Windows.Forms.TextBox();
@@ -63,11 +66,23 @@
             this.payment = new System.Windows.Forms.Button();
             this.sort_price = new System.Windows.Forms.Button();
             this.sort_name = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.report_grid_view = new System.Windows.Forms.DataGridView();
+            this.total_sales = new System.Windows.Forms.Label();
+            this.total_cash = new System.Windows.Forms.Label();
+            this.report_total_sales = new System.Windows.Forms.TextBox();
+            this.report_cash_received = new System.Windows.Forms.TextBox();
+            this.report_chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.add_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.report_grid_view)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.report_chart)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -76,7 +91,6 @@
             this.panel1.Controls.Add(this.ActivePanel);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -115,32 +129,14 @@
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(12, 319);
+            this.button5.Location = new System.Drawing.Point(12, 245);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(208, 70);
             this.button5.TabIndex = 3;
-            this.button5.Text = "      REPORT";
+            this.button5.Text = "      SELL REPORT";
             this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button3
-            // 
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(12, 247);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(208, 70);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "      SELL";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button1
             // 
@@ -214,6 +210,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.csv_path);
             this.panel3.Controls.Add(this.button2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -221,6 +218,13 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1043, 45);
             this.panel3.TabIndex = 6;
+            // 
+            // panel4
+            // 
+            this.panel4.Location = new System.Drawing.Point(275, 45);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(768, 553);
+            this.panel4.TabIndex = 10;
             // 
             // csv_path
             // 
@@ -246,21 +250,20 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // panel4
+            // add_menu
             // 
-            this.panel4.Controls.Add(this.save);
-            this.panel4.Controls.Add(this.discard);
-            this.panel4.Controls.Add(this.price);
-            this.panel4.Controls.Add(this.flowLayoutPanel3);
-            this.panel4.Controls.Add(this.category);
-            this.panel4.Controls.Add(this.flowLayoutPanel2);
-            this.panel4.Controls.Add(this.name);
-            this.panel4.Controls.Add(this.flowLayoutPanel1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(220, 65);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(273, 606);
-            this.panel4.TabIndex = 7;
+            this.add_menu.Controls.Add(this.save);
+            this.add_menu.Controls.Add(this.discard);
+            this.add_menu.Controls.Add(this.price);
+            this.add_menu.Controls.Add(this.flowLayoutPanel3);
+            this.add_menu.Controls.Add(this.category);
+            this.add_menu.Controls.Add(this.flowLayoutPanel2);
+            this.add_menu.Controls.Add(this.name);
+            this.add_menu.Controls.Add(this.flowLayoutPanel1);
+            this.add_menu.Location = new System.Drawing.Point(220, 65);
+            this.add_menu.Name = "add_menu";
+            this.add_menu.Size = new System.Drawing.Size(273, 606);
+            this.add_menu.TabIndex = 7;
             // 
             // save
             // 
@@ -370,11 +373,11 @@
             this.p_category,
             this.p_price,
             this.p_select});
-            this.dataGridView1.Location = new System.Drawing.Point(492, 65);
+            this.dataGridView1.Location = new System.Drawing.Point(499, 71);
             this.dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.Size = new System.Drawing.Size(771, 550);
+            this.dataGridView1.Size = new System.Drawing.Size(761, 547);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -404,7 +407,7 @@
             this.payment.FlatAppearance.BorderSize = 0;
             this.payment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.payment.ForeColor = System.Drawing.Color.White;
-            this.payment.Location = new System.Drawing.Point(1086, 621);
+            this.payment.Location = new System.Drawing.Point(603, 3);
             this.payment.Name = "payment";
             this.payment.Size = new System.Drawing.Size(165, 38);
             this.payment.TabIndex = 2;
@@ -419,7 +422,7 @@
             this.sort_price.FlatAppearance.BorderSize = 0;
             this.sort_price.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sort_price.ForeColor = System.Drawing.Color.White;
-            this.sort_price.Location = new System.Drawing.Point(499, 621);
+            this.sort_price.Location = new System.Drawing.Point(3, 3);
             this.sort_price.Name = "sort_price";
             this.sort_price.Size = new System.Drawing.Size(80, 38);
             this.sort_price.TabIndex = 2;
@@ -433,7 +436,7 @@
             this.sort_name.FlatAppearance.BorderSize = 0;
             this.sort_name.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sort_name.ForeColor = System.Drawing.Color.White;
-            this.sort_name.Location = new System.Drawing.Point(585, 621);
+            this.sort_name.Location = new System.Drawing.Point(89, 3);
             this.sort_name.Name = "sort_name";
             this.sort_name.Size = new System.Drawing.Size(80, 38);
             this.sort_name.TabIndex = 2;
@@ -441,21 +444,114 @@
             this.sort_name.UseVisualStyleBackColor = false;
             this.sort_name.Click += new System.EventHandler(this.sort_name_Click);
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.payment);
+            this.panel5.Controls.Add(this.sort_name);
+            this.panel5.Controls.Add(this.sort_price);
+            this.panel5.Location = new System.Drawing.Point(492, 621);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(771, 50);
+            this.panel5.TabIndex = 9;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.report_chart);
+            this.panel6.Controls.Add(this.total_sales);
+            this.panel6.Controls.Add(this.total_cash);
+            this.panel6.Controls.Add(this.report_total_sales);
+            this.panel6.Controls.Add(this.report_cash_received);
+            this.panel6.Controls.Add(this.report_grid_view);
+            this.panel6.Location = new System.Drawing.Point(228, 71);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1032, 600);
+            this.panel6.TabIndex = 5;
+            // 
+            // report_grid_view
+            // 
+            this.report_grid_view.AllowUserToAddRows = false;
+            this.report_grid_view.AllowUserToDeleteRows = false;
+            this.report_grid_view.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.report_grid_view.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.report_grid_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.report_grid_view.Location = new System.Drawing.Point(0, 0);
+            this.report_grid_view.Name = "report_grid_view";
+            this.report_grid_view.ReadOnly = true;
+            this.report_grid_view.Size = new System.Drawing.Size(614, 529);
+            this.report_grid_view.TabIndex = 1;
+            // 
+            // total_sales
+            // 
+            this.total_sales.AutoSize = true;
+            this.total_sales.Location = new System.Drawing.Point(229, 553);
+            this.total_sales.Name = "total_sales";
+            this.total_sales.Size = new System.Drawing.Size(60, 13);
+            this.total_sales.TabIndex = 18;
+            this.total_sales.Text = "Total Sales";
+            // 
+            // total_cash
+            // 
+            this.total_cash.AutoSize = true;
+            this.total_cash.Location = new System.Drawing.Point(8, 553);
+            this.total_cash.Name = "total_cash";
+            this.total_cash.Size = new System.Drawing.Size(107, 13);
+            this.total_cash.TabIndex = 19;
+            this.total_cash.Text = "Total Cash Received";
+            // 
+            // report_total_sales
+            // 
+            this.report_total_sales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.report_total_sales.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.report_total_sales.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.report_total_sales.Location = new System.Drawing.Point(228, 566);
+            this.report_total_sales.Name = "report_total_sales";
+            this.report_total_sales.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.report_total_sales.Size = new System.Drawing.Size(205, 22);
+            this.report_total_sales.TabIndex = 16;
+            this.report_total_sales.Text = "0";
+            // 
+            // report_cash_received
+            // 
+            this.report_cash_received.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.report_cash_received.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.report_cash_received.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.report_cash_received.Location = new System.Drawing.Point(7, 566);
+            this.report_cash_received.Name = "report_cash_received";
+            this.report_cash_received.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.report_cash_received.Size = new System.Drawing.Size(205, 22);
+            this.report_cash_received.TabIndex = 17;
+            this.report_cash_received.Text = "0";
+            // 
+            // report_chart
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.report_chart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.report_chart.Legends.Add(legend2);
+            this.report_chart.Location = new System.Drawing.Point(615, 3);
+            this.report_chart.Name = "report_chart";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.report_chart.Series.Add(series2);
+            this.report_chart.Size = new System.Drawing.Size(417, 529);
+            this.report_chart.TabIndex = 20;
+            this.report_chart.Text = "chart1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1263, 671);
-            this.Controls.Add(this.sort_name);
-            this.Controls.Add(this.sort_price);
-            this.Controls.Add(this.payment);
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.add_menu);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -467,9 +563,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.add_menu.ResumeLayout(false);
+            this.add_menu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.report_grid_view)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.report_chart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -484,14 +585,13 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel ActivePanel;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox csv_path;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel add_menu;
         private System.Windows.Forms.Button save;
         private System.Windows.Forms.Button discard;
         private System.Windows.Forms.TextBox price;
@@ -508,6 +608,15 @@
         private System.Windows.Forms.Button payment;
         private System.Windows.Forms.Button sort_price;
         private System.Windows.Forms.Button sort_name;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.DataGridView report_grid_view;
+        private System.Windows.Forms.Label total_sales;
+        private System.Windows.Forms.Label total_cash;
+        private System.Windows.Forms.TextBox report_total_sales;
+        private System.Windows.Forms.TextBox report_cash_received;
+        private System.Windows.Forms.DataVisualization.Charting.Chart report_chart;
     }
 }
 

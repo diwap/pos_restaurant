@@ -87,7 +87,6 @@
     <Compile Include="item.Designer.cs">
       <DependentUpon>item.cs</DependentUpon>
     </Compile>
-    <Compile Include="main_menu.cs" />
     <Compile Include="menu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -127,11 +126,18 @@
     <Compile Include="report.Designer.cs">
       <DependentUpon>report.cs</DependentUpon>
     </Compile>
+    <Compile Include="sale_report.cs" />
     <Compile Include="sell.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="sell.Designer.cs">
       <DependentUpon>sell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sell_report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sell_report.Designer.cs">
+      <DependentUpon>sell_report.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="add_menu.resx">
       <DependentUpon>add_menu.cs</DependentUpon>
@@ -175,9 +181,14 @@
     <EmbeddedResource Include="sell.resx">
       <DependentUpon>sell.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="sell_report.resx">
+      <DependentUpon>sell_report.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\menu.datasource" />
     <None Include="Properties\DataSources\menu_name.datasource" />
+    <None Include="Properties\DataSources\payment.datasource" />
+    <None Include="Properties\DataSources\sale_report.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

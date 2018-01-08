@@ -12,6 +12,7 @@ namespace pos_restaurant
 {
     public partial class payment : UserControl
     {
+        
         public payment()
         {
             InitializeComponent();

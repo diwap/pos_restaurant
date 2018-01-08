@@ -11,7 +11,7 @@ namespace pos_restaurant
         public string name { get; set; }
         public string category { get; set; }
         public string price { get; set; }
-        public float quantity { get; set; }
-        public string Total { get { return string.Format("{0}", float.Parse(price, System.Globalization.CultureInfo.InvariantCulture.NumberFormat) * quantity);  } }
+        public string quantity { get; set; }
+        public string Total { get { return string.Format("{0}", Int32.Parse(price) * Int32.Parse(quantity));  } }
     }
 }

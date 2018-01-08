@@ -18,7 +18,16 @@ namespace pos_restaurant
             InitializeComponent();
             ActivePanel.Height = button1.Height;
             ActivePanel.Top = button1.Top;
-            //dashboard1.BringToFront
+            panel5.Visible = true;
+            add_menu.Visible = true;
+            dataGridView1.Visible = true;
+            button2.Visible = true;
+            csv_path.Visible = true;
+            report_grid_view.Visible = false;
+            report_cash_received.Visible = false;
+            report_total_sales.Visible = false;
+            report_chart.Visible = false;
+            panel6.Visible = false;
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -42,21 +51,31 @@ namespace pos_restaurant
         {
             ActivePanel.Height = button1.Height;
             ActivePanel.Top = button1.Top;
-            //dashboard1.BringToFront();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            ActivePanel.Height = button3.Height;
-            ActivePanel.Top = button3.Top;
-            //sell1.BringToFront();
+            panel5.Visible = true;
+            add_menu.Visible = true;
+            dataGridView1.Visible = true;
+            button2.Visible = true;
+            csv_path.Visible = true;
+            report_grid_view.Visible = false;
+            report_cash_received.Visible = false;
+            report_total_sales.Visible = false;
+            report_chart.Visible = false;
+            panel6.Visible = false;
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             ActivePanel.Height = button5.Height;
             ActivePanel.Top = button5.Top;
-            //report1.BringToFront();
+            add_menu.Visible = false;
+            dataGridView1.Visible = false;
+            button2.Visible = false;
+            csv_path.Visible = false;
+            report_grid_view.Visible = true;
+            report_cash_received.Visible = true;
+            report_total_sales.Visible = true;
+            report_chart.Visible = true;
+            panel6.Visible = true;
         }
 
         private void save_Click(object sender, EventArgs e)
@@ -149,5 +168,6 @@ namespace pos_restaurant
                 payment.Visible = true;
             }
         }
+
     }
 }
