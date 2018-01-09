@@ -84,13 +84,13 @@ namespace pos_restaurant
             panel6.Visible = true;
             panel7.Visible = false;
 
-            //foreach (DataGridViewRow item in report_grid_view.Rows)
-            //{
-            //    cash_received.Text = (from DataGridViewRow row in report_grid_view.Rows
-            //                      where row.Cells[4].FormattedValue.ToString() != string.Empty
-            //                      select Convert.ToInt32(row.Cells[4].FormattedValue)).Sum().ToString();
-            //}
-            cash_received.Text = "1000";
+            report_cash_received.Text = (from DataGridViewRow row in report_grid_view.Rows
+                                    where row.Cells[4].FormattedValue.ToString() != string.Empty
+                                    select Convert.ToInt32(row.Cells[4].FormattedValue)).Sum().ToString();
+
+            report_total_sales.Text = (from DataGridViewRow row in report_grid_view.Rows
+                                       where row.Cells[4].FormattedValue.ToString() != string.Empty
+                                       select Convert.ToInt32(row.Cells[4].FormattedValue)).Count().ToString();
 
             generateChart();
         }
