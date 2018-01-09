@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ActivePanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -79,6 +79,21 @@
             this.report_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.report_quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.report_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.btnDiscard = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cash_return = new System.Windows.Forms.TextBox();
+            this.cash_received = new System.Windows.Forms.TextBox();
+            this.btnPayment = new System.Windows.Forms.Button();
+            this.all_total = new System.Windows.Forms.TextBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.paymentGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -88,6 +103,8 @@
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.report_chart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.report_grid_view)).BeginInit();
+            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.paymentGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -362,15 +379,15 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.ColumnHeadersHeight = 40;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -380,8 +397,8 @@
             this.p_select});
             this.dataGridView1.Location = new System.Drawing.Point(499, 71);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.Size = new System.Drawing.Size(761, 547);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -474,17 +491,17 @@
             // 
             // report_chart
             // 
-            chartArea1.Name = "ChartArea1";
-            this.report_chart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.report_chart.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.report_chart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.report_chart.Legends.Add(legend2);
             this.report_chart.Location = new System.Drawing.Point(615, 3);
             this.report_chart.Name = "report_chart";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Legend = "Legend1";
-            series1.Name = "total";
-            this.report_chart.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "total";
+            this.report_chart.Series.Add(series2);
             this.report_chart.Size = new System.Drawing.Size(417, 529);
             this.report_chart.TabIndex = 20;
             this.report_chart.Text = "chart1";
@@ -581,11 +598,163 @@
             this.report_total.Name = "report_total";
             this.report_total.ReadOnly = true;
             // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.btnDiscard);
+            this.panel7.Controls.Add(this.label3);
+            this.panel7.Controls.Add(this.label4);
+            this.panel7.Controls.Add(this.cash_return);
+            this.panel7.Controls.Add(this.cash_received);
+            this.panel7.Controls.Add(this.btnPayment);
+            this.panel7.Controls.Add(this.all_total);
+            this.panel7.Controls.Add(this.btnRefresh);
+            this.panel7.Controls.Add(this.paymentGridView);
+            this.panel7.Location = new System.Drawing.Point(223, 65);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(1040, 606);
+            this.panel7.TabIndex = 21;
+            // 
+            // btnDiscard
+            // 
+            this.btnDiscard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnDiscard.FlatAppearance.BorderSize = 0;
+            this.btnDiscard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDiscard.ForeColor = System.Drawing.Color.White;
+            this.btnDiscard.Location = new System.Drawing.Point(170, 563);
+            this.btnDiscard.Name = "btnDiscard";
+            this.btnDiscard.Size = new System.Drawing.Size(147, 38);
+            this.btnDiscard.TabIndex = 22;
+            this.btnDiscard.Text = "DISCARD";
+            this.btnDiscard.UseVisualStyleBackColor = false;
+            this.btnDiscard.Click += new System.EventHandler(this.btnDiscard_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(961, 498);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 13);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "Cash Return";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(9, 498);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(80, 13);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Cash Received";
+            // 
+            // cash_return
+            // 
+            this.cash_return.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.cash_return.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cash_return.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cash_return.Location = new System.Drawing.Point(822, 511);
+            this.cash_return.Name = "cash_return";
+            this.cash_return.ReadOnly = true;
+            this.cash_return.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cash_return.Size = new System.Drawing.Size(205, 22);
+            this.cash_return.TabIndex = 19;
+            this.cash_return.Text = "0";
+            // 
+            // cash_received
+            // 
+            this.cash_received.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.cash_received.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cash_received.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cash_received.Location = new System.Drawing.Point(8, 511);
+            this.cash_received.Name = "cash_received";
+            this.cash_received.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cash_received.Size = new System.Drawing.Size(205, 22);
+            this.cash_received.TabIndex = 18;
+            this.cash_received.Text = "0";
+            this.cash_received.TextChanged += new System.EventHandler(this.cash_received_TextChanged);
+            // 
+            // btnPayment
+            // 
+            this.btnPayment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnPayment.FlatAppearance.BorderSize = 0;
+            this.btnPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPayment.ForeColor = System.Drawing.Color.White;
+            this.btnPayment.Location = new System.Drawing.Point(8, 563);
+            this.btnPayment.Name = "btnPayment";
+            this.btnPayment.Size = new System.Drawing.Size(147, 38);
+            this.btnPayment.TabIndex = 17;
+            this.btnPayment.Text = "CONFIRM PAYMENT";
+            this.btnPayment.UseVisualStyleBackColor = false;
+            this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
+            // 
+            // all_total
+            // 
+            this.all_total.Location = new System.Drawing.Point(934, 446);
+            this.all_total.Name = "all_total";
+            this.all_total.ReadOnly = true;
+            this.all_total.Size = new System.Drawing.Size(100, 20);
+            this.all_total.TabIndex = 16;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(5, 446);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnRefresh.TabIndex = 15;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // paymentGridView
+            // 
+            this.paymentGridView.AllowUserToAddRows = false;
+            this.paymentGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.paymentGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.quantity,
+            this.total});
+            this.paymentGridView.Location = new System.Drawing.Point(2, 2);
+            this.paymentGridView.Name = "paymentGridView";
+            this.paymentGridView.Size = new System.Drawing.Size(1032, 438);
+            this.paymentGridView.TabIndex = 1;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Category";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Price";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // quantity
+            // 
+            this.quantity.HeaderText = "Quantity";
+            this.quantity.Name = "quantity";
+            // 
+            // total
+            // 
+            this.total.HeaderText = "Total";
+            this.total.Name = "total";
+            this.total.ReadOnly = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1263, 671);
+            this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.add_menu);
@@ -614,6 +783,9 @@
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.report_chart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.report_grid_view)).EndInit();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.paymentGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -665,6 +837,21 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn report_price;
         private System.Windows.Forms.DataGridViewTextBoxColumn report_quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn report_total;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.DataGridView paymentGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn total;
+        private System.Windows.Forms.Button btnDiscard;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox cash_return;
+        private System.Windows.Forms.TextBox cash_received;
+        private System.Windows.Forms.Button btnPayment;
+        private System.Windows.Forms.TextBox all_total;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
 

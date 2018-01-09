@@ -28,6 +28,7 @@ namespace pos_restaurant
             report_total_sales.Visible = false;
             report_chart.Visible = false;
             panel6.Visible = false;
+            panel7.Visible = false;
 
             LoadDataInReportGridView();
             generateChart();
@@ -80,6 +81,7 @@ namespace pos_restaurant
             report_total_sales.Visible = true;
             report_chart.Visible = true;
             panel6.Visible = true;
+            panel7.Visible = false;
         }
 
         private void save_Click(object sender, EventArgs e)
@@ -146,23 +148,39 @@ namespace pos_restaurant
 
         private void payment_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("Payment Slip");
-            List<menu_name> CV = new List<menu_name>();
-            foreach (DataGridViewRow item in dataGridView1.Rows)
+            foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                if (Convert.ToBoolean(item.Cells[3].Value))
+                if (Convert.ToBoolean(row.Cells[3].Value))
                 {
-                    CV.Add(new menu_name
-                    {
-                        name = item.Cells[0].Value.ToString(),
-                        category = item.Cells[1].Value.ToString(),
-                        price = item.Cells[2].Value.ToString()
-                    });
+                    int n = paymentGridView.Rows.Add();
+                    paymentGridView.Rows[n].Cells[0].Value = row.Cells[0].Value.ToString();
+                    paymentGridView.Rows[n].Cells[1].Value = row.Cells[1].Value.ToString();
+                    paymentGridView.Rows[n].Cells[2].Value = row.Cells[2].Value.ToString();
+                    paymentGridView.Rows[n].Cells[3].Value = "1";
+                    paymentGridView.Rows[n].Cells[4].Value = (Int32.Parse(paymentGridView.Rows[n].Cells[2].Value.ToString()) * 1);
                 }
             }
-                payment_form pmt = new payment_form();
-                pmt.Values = CV;
-                pmt.Show();
+
+            //List<menu_name> CV = new List<menu_name>();
+            //foreach (DataGridViewRow item in dataGridView1.Rows)
+            //{
+            //    if (Convert.ToBoolean(item.Cells[3].Value))
+            //    {
+            //        CV.Add(new menu_name
+            //        {
+            //            name = item.Cells[0].Value.ToString(),
+            //            category = item.Cells[1].Value.ToString(),
+            //            price = item.Cells[2].Value.ToString()
+            //        });
+            //    }
+            //}
+            //payment_form pmt = new payment_form();
+            //data = CV;
+            //pmt.Show();
+            panel7.Visible = true;
+            csv_path.Visible = false;
+            button2.Visible = false;
+            panel7.BringToFront();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -267,5 +285,69 @@ namespace pos_restaurant
             report_chart.DataManipulator.GroupByAxisLabel("SUM", "*");
         }
 
+        private void btnPayment_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in paymentGridView.Rows)
+            {
+                if (1==1)
+                {
+                    int n = report_grid_view.Rows.Add();
+                    report_grid_view.Rows[n].Cells[0].Value = row.Cells[0].Value.ToString();
+                    report_grid_view.Rows[n].Cells[1].Value = row.Cells[1].Value.ToString();
+                    report_grid_view.Rows[n].Cells[2].Value = row.Cells[2].Value.ToString();
+                    report_grid_view.Rows[n].Cells[3].Value = row.Cells[3].Value.ToString();
+                    report_grid_view.Rows[n].Cells[4].Value = (Int32.Parse(report_grid_view.Rows[n].Cells[2].Value.ToString()) * Int32.Parse(report_grid_view.Rows[n].Cells[3].Value.ToString()));
+                }
+            }
+
+            btnPayment.Text = "ORDER SUCCESSFUL";
+            panel7.Visible = false;
+            paymentGridView.Rows.Clear();
+            cash_received.Text = "0";
+            cash_return.Clear();
+        }
+
+        private void btnDiscard_Click(object sender, EventArgs e)
+        {
+            panel7.Visible = false;
+            paymentGridView.Rows.Clear();
+            cash_received.Text = "0";
+            cash_return.Clear();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow item in paymentGridView.Rows)
+            {
+                int n = item.Index;
+                string value1 = paymentGridView.Rows[n].Cells[2].Value.ToString();
+                string value2 = paymentGridView.Rows[n].Cells[3].Value.ToString();
+                paymentGridView.Rows[n].Cells[4].Value = (Int32.Parse(value1) * Int32.Parse(value2)).ToString();
+                all_total.Text = (from DataGridViewRow row in paymentGridView.Rows
+                                  where row.Cells[4].FormattedValue.ToString() != string.Empty
+                                  select Convert.ToInt32(row.Cells[4].FormattedValue)).Sum().ToString();
+            }
+        }
+
+        private void cash_received_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int int_cash_received = Int32.Parse(cash_received.Text);
+                int int_all_total = Int32.Parse(all_total.Text);
+                if (int_cash_received >= int_all_total)
+                {
+                    cash_return.Text = (int_cash_received - int_all_total).ToString();
+                }
+                else
+                {
+                    cash_return.Text = "Less than total";
+                }
+            }
+            catch (System.FormatException)
+            {
+                MessageBox.Show("Field is empty");
+            }
+        }
     }
 }

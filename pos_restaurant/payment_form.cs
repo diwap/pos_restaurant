@@ -13,6 +13,8 @@ namespace pos_restaurant
 {
     public partial class payment_form : Form
     {
+
+
         public payment_form()
         {
             InitializeComponent();
