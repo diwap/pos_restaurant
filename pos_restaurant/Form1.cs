@@ -29,8 +29,8 @@ namespace pos_restaurant
             report_chart.Visible = false;
             panel6.Visible = false;
             panel7.Visible = false;
-
-            LoadDataInReportGridView();
+            total_cash.Text = "Total Revenue";
+            //LoadDataInReportGridView();
             generateChart();
         }
 
@@ -82,6 +82,16 @@ namespace pos_restaurant
             report_chart.Visible = true;
             panel6.Visible = true;
             panel7.Visible = false;
+
+            //foreach (DataGridViewRow item in report_grid_view.Rows)
+            //{
+            //    cash_received.Text = (from DataGridViewRow row in report_grid_view.Rows
+            //                      where row.Cells[4].FormattedValue.ToString() != string.Empty
+            //                      select Convert.ToInt32(row.Cells[4].FormattedValue)).Sum().ToString();
+            //}
+            cash_received.Text = "1000";
+
+            generateChart();
         }
 
         private void save_Click(object sender, EventArgs e)
@@ -177,6 +187,11 @@ namespace pos_restaurant
             //payment_form pmt = new payment_form();
             //data = CV;
             //pmt.Show();
+            report_grid_view.Visible = false;
+            report_cash_received.Visible = false;
+            report_total_sales.Visible = true;
+            report_chart.Visible = false;
+            panel6.Visible = false;
             panel7.Visible = true;
             csv_path.Visible = false;
             button2.Visible = false;
@@ -191,78 +206,78 @@ namespace pos_restaurant
             }
         }
 
-        private void LoadDataInReportGridView()
-        {
-            report_grid_view.Rows.Add();
-            report_grid_view.Rows[0].Cells[0].Value = "Apple";
-            report_grid_view.Rows[0].Cells[1].Value = "Fruit";
-            report_grid_view.Rows[0].Cells[2].Value = "100";
-            report_grid_view.Rows[0].Cells[3].Value = "5";
-            report_grid_view.Rows[0].Cells[4].Value = "500";
+        //private void LoadDataInReportGridView()
+        //{
+        //    report_grid_view.Rows.Add();
+        //    report_grid_view.Rows[0].Cells[0].Value = "Apple";
+        //    report_grid_view.Rows[0].Cells[1].Value = "Fruit";
+        //    report_grid_view.Rows[0].Cells[2].Value = "100";
+        //    report_grid_view.Rows[0].Cells[3].Value = "5";
+        //    report_grid_view.Rows[0].Cells[4].Value = "500";
 
-            report_grid_view.Rows.Add();
-            report_grid_view.Rows[1].Cells[0].Value = "Mango";
-            report_grid_view.Rows[1].Cells[1].Value = "Fruit";
-            report_grid_view.Rows[1].Cells[2].Value = "150";
-            report_grid_view.Rows[1].Cells[3].Value = "4";
-            report_grid_view.Rows[1].Cells[4].Value = "600";
+        //    report_grid_view.Rows.Add();
+        //    report_grid_view.Rows[1].Cells[0].Value = "Mango";
+        //    report_grid_view.Rows[1].Cells[1].Value = "Fruit";
+        //    report_grid_view.Rows[1].Cells[2].Value = "150";
+        //    report_grid_view.Rows[1].Cells[3].Value = "4";
+        //    report_grid_view.Rows[1].Cells[4].Value = "600";
 
-            report_grid_view.Rows.Add();
-            report_grid_view.Rows[2].Cells[0].Value = "Carrot";
-            report_grid_view.Rows[2].Cells[1].Value = "Vegetable";
-            report_grid_view.Rows[2].Cells[2].Value = "60";
-            report_grid_view.Rows[2].Cells[3].Value = "1";
-            report_grid_view.Rows[2].Cells[4].Value = "60";
+        //    report_grid_view.Rows.Add();
+        //    report_grid_view.Rows[2].Cells[0].Value = "Carrot";
+        //    report_grid_view.Rows[2].Cells[1].Value = "Vegetable";
+        //    report_grid_view.Rows[2].Cells[2].Value = "60";
+        //    report_grid_view.Rows[2].Cells[3].Value = "1";
+        //    report_grid_view.Rows[2].Cells[4].Value = "60";
 
-            report_grid_view.Rows.Add();
-            report_grid_view.Rows[3].Cells[0].Value = "Tomato";
-            report_grid_view.Rows[3].Cells[1].Value = "Vegetable";
-            report_grid_view.Rows[3].Cells[2].Value = "200";
-            report_grid_view.Rows[3].Cells[3].Value = "2";
-            report_grid_view.Rows[3].Cells[4].Value = "400";
+        //    report_grid_view.Rows.Add();
+        //    report_grid_view.Rows[3].Cells[0].Value = "Tomato";
+        //    report_grid_view.Rows[3].Cells[1].Value = "Vegetable";
+        //    report_grid_view.Rows[3].Cells[2].Value = "200";
+        //    report_grid_view.Rows[3].Cells[3].Value = "2";
+        //    report_grid_view.Rows[3].Cells[4].Value = "400";
 
-            report_grid_view.Rows.Add();
-            report_grid_view.Rows[4].Cells[0].Value = "Radish";
-            report_grid_view.Rows[4].Cells[1].Value = "Vegetable";
-            report_grid_view.Rows[4].Cells[2].Value = "60";
-            report_grid_view.Rows[4].Cells[3].Value = "4";
-            report_grid_view.Rows[4].Cells[4].Value = "240";
+        //    report_grid_view.Rows.Add();
+        //    report_grid_view.Rows[4].Cells[0].Value = "Radish";
+        //    report_grid_view.Rows[4].Cells[1].Value = "Vegetable";
+        //    report_grid_view.Rows[4].Cells[2].Value = "60";
+        //    report_grid_view.Rows[4].Cells[3].Value = "4";
+        //    report_grid_view.Rows[4].Cells[4].Value = "240";
 
-            report_grid_view.Rows.Add();
-            report_grid_view.Rows[5].Cells[0].Value = "Fruit Cake";
-            report_grid_view.Rows[5].Cells[1].Value = "Breakfast";
-            report_grid_view.Rows[5].Cells[2].Value = "90";
-            report_grid_view.Rows[5].Cells[3].Value = "2";
-            report_grid_view.Rows[5].Cells[4].Value = "180";
+        //    report_grid_view.Rows.Add();
+        //    report_grid_view.Rows[5].Cells[0].Value = "Fruit Cake";
+        //    report_grid_view.Rows[5].Cells[1].Value = "Breakfast";
+        //    report_grid_view.Rows[5].Cells[2].Value = "90";
+        //    report_grid_view.Rows[5].Cells[3].Value = "2";
+        //    report_grid_view.Rows[5].Cells[4].Value = "180";
 
-            report_grid_view.Rows.Add();
-            report_grid_view.Rows[6].Cells[0].Value = "Bread Toast";
-            report_grid_view.Rows[6].Cells[1].Value = "Breakfast";
-            report_grid_view.Rows[6].Cells[2].Value = "200";
-            report_grid_view.Rows[6].Cells[3].Value = "3";
-            report_grid_view.Rows[6].Cells[4].Value = "600";
+        //    report_grid_view.Rows.Add();
+        //    report_grid_view.Rows[6].Cells[0].Value = "Bread Toast";
+        //    report_grid_view.Rows[6].Cells[1].Value = "Breakfast";
+        //    report_grid_view.Rows[6].Cells[2].Value = "200";
+        //    report_grid_view.Rows[6].Cells[3].Value = "3";
+        //    report_grid_view.Rows[6].Cells[4].Value = "600";
 
-            report_grid_view.Rows.Add();
-            report_grid_view.Rows[7].Cells[0].Value = "Fry Rice";
-            report_grid_view.Rows[7].Cells[1].Value = "Lunch";
-            report_grid_view.Rows[7].Cells[2].Value = "150";
-            report_grid_view.Rows[7].Cells[3].Value = "2";
-            report_grid_view.Rows[7].Cells[4].Value = "300";
+        //    report_grid_view.Rows.Add();
+        //    report_grid_view.Rows[7].Cells[0].Value = "Fry Rice";
+        //    report_grid_view.Rows[7].Cells[1].Value = "Lunch";
+        //    report_grid_view.Rows[7].Cells[2].Value = "150";
+        //    report_grid_view.Rows[7].Cells[3].Value = "2";
+        //    report_grid_view.Rows[7].Cells[4].Value = "300";
 
-            report_grid_view.Rows.Add();
-            report_grid_view.Rows[8].Cells[0].Value = "Chicken Susi";
-            report_grid_view.Rows[8].Cells[1].Value = "Lunch";
-            report_grid_view.Rows[8].Cells[2].Value = "200";
-            report_grid_view.Rows[8].Cells[3].Value = "8";
-            report_grid_view.Rows[8].Cells[4].Value = "1600";
+        //    report_grid_view.Rows.Add();
+        //    report_grid_view.Rows[8].Cells[0].Value = "Chicken Susi";
+        //    report_grid_view.Rows[8].Cells[1].Value = "Lunch";
+        //    report_grid_view.Rows[8].Cells[2].Value = "200";
+        //    report_grid_view.Rows[8].Cells[3].Value = "8";
+        //    report_grid_view.Rows[8].Cells[4].Value = "1600";
 
-            report_grid_view.Rows.Add();
-            report_grid_view.Rows[9].Cells[0].Value = "Dhido";
-            report_grid_view.Rows[9].Cells[1].Value = "Lunch";
-            report_grid_view.Rows[9].Cells[2].Value = "1000";
-            report_grid_view.Rows[9].Cells[3].Value = "3";
-            report_grid_view.Rows[9].Cells[4].Value = "3000";
-        }
+        //    report_grid_view.Rows.Add();
+        //    report_grid_view.Rows[9].Cells[0].Value = "Dhido";
+        //    report_grid_view.Rows[9].Cells[1].Value = "Lunch";
+        //    report_grid_view.Rows[9].Cells[2].Value = "1000";
+        //    report_grid_view.Rows[9].Cells[3].Value = "3";
+        //    report_grid_view.Rows[9].Cells[4].Value = "3000";
+        //}
 
         private void generateChart()
         {
@@ -287,9 +302,9 @@ namespace pos_restaurant
 
         private void btnPayment_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in paymentGridView.Rows)
+            if (cash_received.Text != "0")
             {
-                if (1==1)
+                foreach (DataGridViewRow row in paymentGridView.Rows)
                 {
                     int n = report_grid_view.Rows.Add();
                     report_grid_view.Rows[n].Cells[0].Value = row.Cells[0].Value.ToString();
@@ -298,13 +313,17 @@ namespace pos_restaurant
                     report_grid_view.Rows[n].Cells[3].Value = row.Cells[3].Value.ToString();
                     report_grid_view.Rows[n].Cells[4].Value = (Int32.Parse(report_grid_view.Rows[n].Cells[2].Value.ToString()) * Int32.Parse(report_grid_view.Rows[n].Cells[3].Value.ToString()));
                 }
-            }
 
-            btnPayment.Text = "ORDER SUCCESSFUL";
-            panel7.Visible = false;
-            paymentGridView.Rows.Clear();
-            cash_received.Text = "0";
-            cash_return.Clear();
+                panel7.Visible = false;
+                paymentGridView.Rows.Clear();
+                cash_received.Text = "0";
+                cash_return.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Insert amount you received for your order!");
+            }
+            
         }
 
         private void btnDiscard_Click(object sender, EventArgs e)
@@ -316,6 +335,11 @@ namespace pos_restaurant
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            change_Value();
+        }
+
+        private void change_Value()
         {
             foreach (DataGridViewRow item in paymentGridView.Rows)
             {
@@ -348,6 +372,11 @@ namespace pos_restaurant
             {
                 MessageBox.Show("Field is empty");
             }
+        }
+
+        private void cash_received_Click(object sender, EventArgs e)
+        {
+            change_Value();
         }
     }
 }
