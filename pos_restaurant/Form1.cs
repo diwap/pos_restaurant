@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.FileIO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -118,24 +119,28 @@ namespace pos_restaurant
 
         private void button2_Click(object sender, EventArgs e)
         {
-            OpenFileDialog dialog = new OpenFileDialog();/**Opens New Dialog Box */
-            dialog.Filter = "Files(*.txt, *.csv)|*.txt;*.csv|All Files (*.*) |*.*"; /**used for .csv format */
-            DialogResult result = dialog.ShowDialog();
+            OpenFileDialog fd = new OpenFileDialog();
+            fd.Filter = "Files(*.txt, *.csv)|*.txt;*.csv|All Files (*.*) |*.*"; /**used for .csv format */
+            fd.ShowDialog();
+            TextFieldParser csvParser = new TextFieldParser(fd.FileName);
+            csvParser.SetDelimiters(new string[] { "," });
+            csvParser.HasFieldsEnclosedInQuotes = true;
 
-            /**If csv file is chosen */
-            if (result == DialogResult.OK)
+            // Skip the row with the column names
+            csvParser.ReadLine();
+
+            while (!csvParser.EndOfData)
             {
-                csv_path.Text = dialog.FileName;
-                StreamReader stream_data = new StreamReader(dialog.FileName);
-                while (!stream_data.EndOfStream)
-                {
-                    /** Spliting the Excel data into Colomns */
-                    var columns = stream_data.ReadLine().Split(',');
-                    Console.WriteLine(columns);
+                // Read current line fields, pointer moves to the next line.
+                string[] fields = csvParser.ReadFields();
 
-                    /** Adding Columns in datagrid view*/
-                    dataGridView1.Rows.Add(columns);
+                int count = dataGridView1.Rows.Count;
+                dataGridView1.Rows.Add();
+                for (int i = 0; i < fields.Length; i++)
+                {
+                    dataGridView1.Rows[count].Cells[i].Value = fields[i];
                 }
+
             }
         }
 
