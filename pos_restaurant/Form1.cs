@@ -28,7 +28,11 @@ namespace pos_restaurant
             report_total_sales.Visible = false;
             report_chart.Visible = false;
             panel6.Visible = false;
+
+            LoadDataInReportGridView();
+            generateChart();
         }
+
 
         private void button6_Click(object sender, EventArgs e)
         {
@@ -167,6 +171,100 @@ namespace pos_restaurant
             {
                 payment.Visible = true;
             }
+        }
+
+        private void LoadDataInReportGridView()
+        {
+            report_grid_view.Rows.Add();
+            report_grid_view.Rows[0].Cells[0].Value = "Apple";
+            report_grid_view.Rows[0].Cells[1].Value = "Fruit";
+            report_grid_view.Rows[0].Cells[2].Value = "100";
+            report_grid_view.Rows[0].Cells[3].Value = "5";
+            report_grid_view.Rows[0].Cells[4].Value = "500";
+
+            report_grid_view.Rows.Add();
+            report_grid_view.Rows[1].Cells[0].Value = "Mango";
+            report_grid_view.Rows[1].Cells[1].Value = "Fruit";
+            report_grid_view.Rows[1].Cells[2].Value = "150";
+            report_grid_view.Rows[1].Cells[3].Value = "4";
+            report_grid_view.Rows[1].Cells[4].Value = "600";
+
+            report_grid_view.Rows.Add();
+            report_grid_view.Rows[2].Cells[0].Value = "Carrot";
+            report_grid_view.Rows[2].Cells[1].Value = "Vegetable";
+            report_grid_view.Rows[2].Cells[2].Value = "60";
+            report_grid_view.Rows[2].Cells[3].Value = "1";
+            report_grid_view.Rows[2].Cells[4].Value = "60";
+
+            report_grid_view.Rows.Add();
+            report_grid_view.Rows[3].Cells[0].Value = "Tomato";
+            report_grid_view.Rows[3].Cells[1].Value = "Vegetable";
+            report_grid_view.Rows[3].Cells[2].Value = "200";
+            report_grid_view.Rows[3].Cells[3].Value = "2";
+            report_grid_view.Rows[3].Cells[4].Value = "400";
+
+            report_grid_view.Rows.Add();
+            report_grid_view.Rows[4].Cells[0].Value = "Radish";
+            report_grid_view.Rows[4].Cells[1].Value = "Vegetable";
+            report_grid_view.Rows[4].Cells[2].Value = "60";
+            report_grid_view.Rows[4].Cells[3].Value = "4";
+            report_grid_view.Rows[4].Cells[4].Value = "240";
+
+            report_grid_view.Rows.Add();
+            report_grid_view.Rows[5].Cells[0].Value = "Fruit Cake";
+            report_grid_view.Rows[5].Cells[1].Value = "Breakfast";
+            report_grid_view.Rows[5].Cells[2].Value = "90";
+            report_grid_view.Rows[5].Cells[3].Value = "2";
+            report_grid_view.Rows[5].Cells[4].Value = "180";
+
+            report_grid_view.Rows.Add();
+            report_grid_view.Rows[6].Cells[0].Value = "Bread Toast";
+            report_grid_view.Rows[6].Cells[1].Value = "Breakfast";
+            report_grid_view.Rows[6].Cells[2].Value = "200";
+            report_grid_view.Rows[6].Cells[3].Value = "3";
+            report_grid_view.Rows[6].Cells[4].Value = "600";
+
+            report_grid_view.Rows.Add();
+            report_grid_view.Rows[7].Cells[0].Value = "Fry Rice";
+            report_grid_view.Rows[7].Cells[1].Value = "Lunch";
+            report_grid_view.Rows[7].Cells[2].Value = "150";
+            report_grid_view.Rows[7].Cells[3].Value = "2";
+            report_grid_view.Rows[7].Cells[4].Value = "300";
+
+            report_grid_view.Rows.Add();
+            report_grid_view.Rows[8].Cells[0].Value = "Chicken Susi";
+            report_grid_view.Rows[8].Cells[1].Value = "Lunch";
+            report_grid_view.Rows[8].Cells[2].Value = "200";
+            report_grid_view.Rows[8].Cells[3].Value = "8";
+            report_grid_view.Rows[8].Cells[4].Value = "1600";
+
+            report_grid_view.Rows.Add();
+            report_grid_view.Rows[9].Cells[0].Value = "Dhido";
+            report_grid_view.Rows[9].Cells[1].Value = "Lunch";
+            report_grid_view.Rows[9].Cells[2].Value = "1000";
+            report_grid_view.Rows[9].Cells[3].Value = "3";
+            report_grid_view.Rows[9].Cells[4].Value = "3000";
+        }
+
+        private void generateChart()
+        {
+            List<string> item = new List<string>();
+            List<int> total = new List<int>();
+
+            for (int i = 0; i < report_grid_view.Rows.Count; i++)
+            {
+                item.Add(report_grid_view.Rows[i].Cells[1].Value.ToString());
+                total.Add(Int32.Parse(report_grid_view.Rows[i].Cells[4].Value.ToString()));
+            }
+
+            List<string> distinct = item.Distinct().ToList();
+
+            for (int i = 0; i < item.Count; i++)
+            {
+                report_chart.Series["total"].Points.AddXY(item[i], total[i]);
+            }
+
+            report_chart.DataManipulator.GroupByAxisLabel("SUM", "*");
         }
 
     }

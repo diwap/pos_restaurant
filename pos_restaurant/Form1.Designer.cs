@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ActivePanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -68,12 +68,17 @@
             this.sort_name = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.report_grid_view = new System.Windows.Forms.DataGridView();
+            this.report_chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.total_sales = new System.Windows.Forms.Label();
             this.total_cash = new System.Windows.Forms.Label();
             this.report_total_sales = new System.Windows.Forms.TextBox();
             this.report_cash_received = new System.Windows.Forms.TextBox();
-            this.report_chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.report_grid_view = new System.Windows.Forms.DataGridView();
+            this.report_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.report_category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.report_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.report_quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.report_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -81,8 +86,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.report_grid_view)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.report_chart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.report_grid_view)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -357,15 +362,15 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeight = 40;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -375,8 +380,8 @@
             this.p_select});
             this.dataGridView1.Location = new System.Drawing.Point(499, 71);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Size = new System.Drawing.Size(761, 547);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -467,18 +472,22 @@
             this.panel6.Size = new System.Drawing.Size(1032, 600);
             this.panel6.TabIndex = 5;
             // 
-            // report_grid_view
+            // report_chart
             // 
-            this.report_grid_view.AllowUserToAddRows = false;
-            this.report_grid_view.AllowUserToDeleteRows = false;
-            this.report_grid_view.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.report_grid_view.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.report_grid_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.report_grid_view.Location = new System.Drawing.Point(0, 0);
-            this.report_grid_view.Name = "report_grid_view";
-            this.report_grid_view.ReadOnly = true;
-            this.report_grid_view.Size = new System.Drawing.Size(614, 529);
-            this.report_grid_view.TabIndex = 1;
+            chartArea1.Name = "ChartArea1";
+            this.report_chart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.report_chart.Legends.Add(legend1);
+            this.report_chart.Location = new System.Drawing.Point(615, 3);
+            this.report_chart.Name = "report_chart";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "total";
+            this.report_chart.Series.Add(series1);
+            this.report_chart.Size = new System.Drawing.Size(417, 529);
+            this.report_chart.TabIndex = 20;
+            this.report_chart.Text = "chart1";
             // 
             // total_sales
             // 
@@ -522,21 +531,55 @@
             this.report_cash_received.TabIndex = 17;
             this.report_cash_received.Text = "0";
             // 
-            // report_chart
+            // report_grid_view
             // 
-            chartArea2.Name = "ChartArea1";
-            this.report_chart.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.report_chart.Legends.Add(legend2);
-            this.report_chart.Location = new System.Drawing.Point(615, 3);
-            this.report_chart.Name = "report_chart";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.report_chart.Series.Add(series2);
-            this.report_chart.Size = new System.Drawing.Size(417, 529);
-            this.report_chart.TabIndex = 20;
-            this.report_chart.Text = "chart1";
+            this.report_grid_view.AllowUserToAddRows = false;
+            this.report_grid_view.AllowUserToDeleteRows = false;
+            this.report_grid_view.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.report_grid_view.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.report_grid_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.report_grid_view.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.report_name,
+            this.report_category,
+            this.report_price,
+            this.report_quantity,
+            this.report_total});
+            this.report_grid_view.Location = new System.Drawing.Point(0, 0);
+            this.report_grid_view.Name = "report_grid_view";
+            this.report_grid_view.ReadOnly = true;
+            this.report_grid_view.Size = new System.Drawing.Size(614, 529);
+            this.report_grid_view.TabIndex = 1;
+            // 
+            // report_name
+            // 
+            this.report_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.report_name.HeaderText = "Name";
+            this.report_name.Name = "report_name";
+            this.report_name.ReadOnly = true;
+            // 
+            // report_category
+            // 
+            this.report_category.HeaderText = "Category";
+            this.report_category.Name = "report_category";
+            this.report_category.ReadOnly = true;
+            // 
+            // report_price
+            // 
+            this.report_price.HeaderText = "Price";
+            this.report_price.Name = "report_price";
+            this.report_price.ReadOnly = true;
+            // 
+            // report_quantity
+            // 
+            this.report_quantity.HeaderText = "Quantity";
+            this.report_quantity.Name = "report_quantity";
+            this.report_quantity.ReadOnly = true;
+            // 
+            // report_total
+            // 
+            this.report_total.HeaderText = "Total";
+            this.report_total.Name = "report_total";
+            this.report_total.ReadOnly = true;
             // 
             // Form1
             // 
@@ -569,8 +612,8 @@
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.report_grid_view)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.report_chart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.report_grid_view)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -617,6 +660,11 @@
         private System.Windows.Forms.TextBox report_total_sales;
         private System.Windows.Forms.TextBox report_cash_received;
         private System.Windows.Forms.DataVisualization.Charting.Chart report_chart;
+        private System.Windows.Forms.DataGridViewTextBoxColumn report_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn report_category;
+        private System.Windows.Forms.DataGridViewTextBoxColumn report_price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn report_quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn report_total;
     }
 }
 

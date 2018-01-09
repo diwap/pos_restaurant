@@ -95,6 +95,7 @@ namespace pos_restaurant
         private void save_Click(object sender, EventArgs e)
         {
             save.Text = "ORDER SUCCESSFUL";
+            this.Close();
             
         }
 
