@@ -37,7 +37,7 @@ namespace pos_restaurant
         }
 
 
-        private void button6_Click(object sender, EventArgs e)
+        private void close_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("This will close down the whole application. Confirm? \n Last Tried time: " + DateTime.Now.ToShortTimeString(), "Close Application", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
@@ -54,7 +54,7 @@ namespace pos_restaurant
             label2.Text = DateTime.Now.ToString("HH:mm:ss");
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnDashboard_Click(object sender, EventArgs e)
         {
             ActivePanel.Height = btnDashboard.Height;
             ActivePanel.Top = btnDashboard.Top;
@@ -70,7 +70,7 @@ namespace pos_restaurant
             panel6.Visible = false;
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void btnReport_Click(object sender, EventArgs e)
         {
             ActivePanel.Height = btnReport.Height;
             ActivePanel.Top = btnReport.Top;
@@ -109,7 +109,9 @@ namespace pos_restaurant
                 {
                     dataGridView1.Rows[n].Cells[2].Value = price.Text;
                 }
-
+                name.Text = "Name";
+                category.Text = "Category";
+                price.Text = "Price";
                 //MessageBox.Show(string.Format("Your food details:\n\nName: {0} \nCategory: {1} \nPrice: {2}", name.Text, category.Text, price.Text));
             }
             else
@@ -118,7 +120,7 @@ namespace pos_restaurant
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnImport_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
             dialog.Filter = "Files(*.txt, *.csv)|*.txt;*.csv|All Files (*.*) |*.*"; /**used for .csv format */
@@ -180,25 +182,10 @@ namespace pos_restaurant
                     paymentGridView.Rows[n].Cells[2].Value = row.Cells[2].Value.ToString();
                     paymentGridView.Rows[n].Cells[3].Value = "1";
                     paymentGridView.Rows[n].Cells[4].Value = (Int32.Parse(paymentGridView.Rows[n].Cells[2].Value.ToString()) * 1);
+                    row.Cells[3].Value = false;
                 }
             }
 
-            //List<menu_name> CV = new List<menu_name>();
-            //foreach (DataGridViewRow item in dataGridView1.Rows)
-            //{
-            //    if (Convert.ToBoolean(item.Cells[3].Value))
-            //    {
-            //        CV.Add(new menu_name
-            //        {
-            //            name = item.Cells[0].Value.ToString(),
-            //            category = item.Cells[1].Value.ToString(),
-            //            price = item.Cells[2].Value.ToString()
-            //        });
-            //    }
-            //}
-            //payment_form pmt = new payment_form();
-            //data = CV;
-            //pmt.Show();
             report_grid_view.Visible = false;
             report_cash_received.Visible = false;
             report_total_sales.Visible = true;
@@ -382,13 +369,27 @@ namespace pos_restaurant
             }
             catch (System.FormatException)
             {
-                MessageBox.Show("Field is empty");
             }
         }
 
         private void cash_received_Click(object sender, EventArgs e)
         {
             change_Value();
+            cash_received.Clear();
+        }
+
+        private void price_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void price_Click(object sender, EventArgs e)
+        {
+            price.Clear();
         }
     }
 }
