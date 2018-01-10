@@ -119,10 +119,10 @@ namespace pos_restaurant
 
         private void button2_Click(object sender, EventArgs e)
         {
-            OpenFileDialog fd = new OpenFileDialog();
-            fd.Filter = "Files(*.txt, *.csv)|*.txt;*.csv|All Files (*.*) |*.*"; /**used for .csv format */
-            fd.ShowDialog();
-            TextFieldParser csvParser = new TextFieldParser(fd.FileName);
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "Files(*.txt, *.csv)|*.txt;*.csv|All Files (*.*) |*.*"; /**used for .csv format */
+            dialog.ShowDialog();
+            TextFieldParser csvParser = new TextFieldParser(dialog.FileName);
             csvParser.SetDelimiters(new string[] { "," });
             csvParser.HasFieldsEnclosedInQuotes = true;
 
@@ -131,6 +131,7 @@ namespace pos_restaurant
 
             while (!csvParser.EndOfData)
             {
+                csv_path.Text = dialog.FileName;
                 // Read current line fields, pointer moves to the next line.
                 string[] fields = csvParser.ReadFields();
 
@@ -140,7 +141,6 @@ namespace pos_restaurant
                 {
                     dataGridView1.Rows[count].Cells[i].Value = fields[i];
                 }
-
             }
         }
 
