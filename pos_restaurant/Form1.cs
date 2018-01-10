@@ -12,17 +12,18 @@ using System.Windows.Forms;
 
 namespace pos_restaurant
 {
+    [Serializable]
     public partial class Form1 : Form
     {
         public Form1()
         {
             InitializeComponent();
-            ActivePanel.Height = button1.Height;
-            ActivePanel.Top = button1.Top;
+            ActivePanel.Height = btnDashboard.Height;
+            ActivePanel.Top = btnDashboard.Top;
             panel5.Visible = true;
             add_menu.Visible = true;
             dataGridView1.Visible = true;
-            button2.Visible = true;
+            btnImport.Visible = true;
             csv_path.Visible = true;
             report_grid_view.Visible = false;
             report_cash_received.Visible = false;
@@ -55,12 +56,12 @@ namespace pos_restaurant
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ActivePanel.Height = button1.Height;
-            ActivePanel.Top = button1.Top;
+            ActivePanel.Height = btnDashboard.Height;
+            ActivePanel.Top = btnDashboard.Top;
             panel5.Visible = true;
             add_menu.Visible = true;
             dataGridView1.Visible = true;
-            button2.Visible = true;
+            btnImport.Visible = true;
             csv_path.Visible = true;
             report_grid_view.Visible = false;
             report_cash_received.Visible = false;
@@ -71,11 +72,11 @@ namespace pos_restaurant
 
         private void button5_Click(object sender, EventArgs e)
         {
-            ActivePanel.Height = button5.Height;
-            ActivePanel.Top = button5.Top;
+            ActivePanel.Height = btnReport.Height;
+            ActivePanel.Top = btnReport.Top;
             add_menu.Visible = false;
             dataGridView1.Visible = false;
-            button2.Visible = false;
+            btnImport.Visible = false;
             csv_path.Visible = false;
             report_grid_view.Visible = true;
             report_cash_received.Visible = true;
@@ -122,26 +123,32 @@ namespace pos_restaurant
             OpenFileDialog dialog = new OpenFileDialog();
             dialog.Filter = "Files(*.txt, *.csv)|*.txt;*.csv|All Files (*.*) |*.*"; /**used for .csv format */
             dialog.ShowDialog();
-            TextFieldParser csvParser = new TextFieldParser(dialog.FileName);
-            csvParser.SetDelimiters(new string[] { "," });
-            csvParser.HasFieldsEnclosedInQuotes = true;
-
-            // Skip the row with the column names
-            csvParser.ReadLine();
-
-            while (!csvParser.EndOfData)
+            if (dialog.FileName != "")
             {
-                csv_path.Text = dialog.FileName;
-                // Read current line fields, pointer moves to the next line.
-                string[] fields = csvParser.ReadFields();
+                TextFieldParser csvParser = new TextFieldParser(dialog.FileName);
+                csvParser.SetDelimiters(new string[] { "," });
+                csvParser.HasFieldsEnclosedInQuotes = true;
 
-                int count = dataGridView1.Rows.Count;
-                dataGridView1.Rows.Add();
-                for (int i = 0; i < fields.Length; i++)
+                // Skip the row with the column names
+                csvParser.ReadLine();
+
+                while (!csvParser.EndOfData)
                 {
-                    dataGridView1.Rows[count].Cells[i].Value = fields[i];
+                    csv_path.Text = dialog.FileName;
+                    // Read current line fields, pointer moves to the next line.
+                    string[] fields = csvParser.ReadFields();
+
+                    int count = dataGridView1.Rows.Count;
+                    dataGridView1.Rows.Add();
+                    for (int i = 0; i < fields.Length; i++)
+                    {
+                        dataGridView1.Rows[count].Cells[i].Value = fields[i];
+                    }
                 }
             }
+            
+
+            
         }
 
         private void discard_Click(object sender, EventArgs e)
@@ -199,7 +206,7 @@ namespace pos_restaurant
             panel6.Visible = false;
             panel7.Visible = true;
             csv_path.Visible = false;
-            button2.Visible = false;
+            btnImport.Visible = false;
             panel7.BringToFront();
         }
 
