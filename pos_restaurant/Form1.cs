@@ -38,7 +38,7 @@ namespace pos_restaurant
 
         private void button6_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("This will close down the whole application. Confirm?", "Close Application", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("This will close down the whole application. Confirm? \n Last Tried time: " + DateTime.Now.ToShortTimeString(), "Close Application", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 System.Windows.Forms.Application.Exit();
             }
